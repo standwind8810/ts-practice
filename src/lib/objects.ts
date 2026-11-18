@@ -32,7 +32,6 @@ export const line = formatBest(player);
 const withAge = { name: "ぴよ", best: 5, age: 20 };
 export const line2 = formatBest(withAge); // OK：変数を通すと余分なものは許される
 
-
 // ② interface と type で型に名前を付ける
 
 // --- interface：オブジェクトの型に名前を付ける ---
@@ -83,7 +82,6 @@ export type Pos = [number, number];
 export const level: Level = "normal";
 export const start: Pos = [0, 0];
 
-
 // ③ 型を組み合わせる
 
 // --- interface は extends で広げる（元の項目を全部受け継ぎ、項目を足す）---
@@ -116,7 +114,6 @@ export const record1: TimedPlayer = {
 // --- 項目がぶつかったときの違い ---
 // interface Bad extends Named { name: number } // エラー：name の型が合わないと、その場で教えてくれる
 // type Odd = Named & { name: number }; // エラーにならない。name は「string かつ number」= never になる
-
 
 // ④ オブジェクトの配列、入れ子、Record
 
