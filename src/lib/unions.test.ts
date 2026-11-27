@@ -2,33 +2,33 @@ import { describe, expect, test } from "vitest";
 import { formatId, hintMessage, isFinished, parseLevel } from "./unions";
 
 describe("formatId", () => {
-    test("number のときは No. を付ける", () => {
-        expect(formatId(7)).toBe("No.7");
-    });
+  test("number のときは No. を付ける", () => {
+    expect(formatId(7)).toBe("No.7");
+  });
 
-    test("string のときは大文字にする", () => {
-        expect(formatId("guest")).toBe("GUEST");
-    });
+  test("string のときは大文字にする", () => {
+    expect(formatId("guest")).toBe("GUEST");
+  });
 
-    test("空文字のときはそのまま空文字", () => {
-        expect(formatId("")).toBe("");
-    });
+  test("空文字のときはそのまま空文字", () => {
+    expect(formatId("")).toBe("");
+  });
 });
 
 describe("isFinished", () => {
-    test("correct のときだけ true", () => {
-        expect(isFinished("correct")).toBe(true);
-        expect(isFinished("higher")).toBe(false);
-        expect(isFinished("lower")).toBe(false);
-    })
+  test("correct のときだけ true", () => {
+    expect(isFinished("correct")).toBe(true);
+    expect(isFinished("higher")).toBe(false);
+    expect(isFinished("lower")).toBe(false);
+  });
 });
 
 describe("hintMessage", () => {
-    test("3つのヒントそれぞれのメッセージ", () => {
-        expect(hintMessage("higher")).toBe("もっと大きいです。");
-        expect(hintMessage("lower")).toBe("もっと小さいです。");
-        expect(hintMessage("correct")).toBe("正解！");  
-    });
+  test("3つのヒントそれぞれのメッセージ", () => {
+    expect(hintMessage("higher")).toBe("もっと大きいです。");
+    expect(hintMessage("lower")).toBe("もっと小さいです。");
+    expect(hintMessage("correct")).toBe("正解！");
+  });
 });
 
 describe("parseLevel", () => {
